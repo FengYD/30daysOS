@@ -1,0 +1,1 @@
+.. \ztools\imgtol.com w a: helloos.img
