@@ -40,6 +40,7 @@ entry:
 		MOV		CH,0			; 柱面0
 		MOV		DH,0			; 磁头0
 		MOV		CL,2			; 扇区2
+
 		MOV		SI,0			; 记录失败次数的寄存器
 
 retry:
@@ -51,7 +52,7 @@ retry:
 		JNC		fin				; jump not carry
 		ADD		SI,1			; 到这里说明出错了，错误次数加一
 		CMP		SI,5			; 错误次数和5比较
-		JAR		error			; jump above or equal
+		JAE		error			; jump above or equal
 		MOV		AH,0x00			
 		MOV		DL,0x00			; A驱动器
 		INT		0x13			; 重置驱动器
