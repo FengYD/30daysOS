@@ -56,7 +56,7 @@ retry:
 		MOV		DL,0x00			; A驱动器
 		INT		0x13			; 重置驱动器
 		JMP		retry
-		JC		error
+		
 fin:
 		HLT						; 让CPU停止，等待指令
 		JMP		fin				; 无限循环
